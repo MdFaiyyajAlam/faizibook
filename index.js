@@ -1,8 +1,15 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/BMS");
+mongoose.connect("mongodb://localhost:27017/BMS", {
+useNewUrlParser:true,    
+useUnifiedTopology:true
+}).then(() => {
+    console.log("connection successful");
+}).catch((e) => {
+    console.log(e);
+})
 
+const port = process.env.PORT || 3000;
 const express= require("express");
-const PORT = process.env.PORT || 3000;
 const app = express();
 
 var http = require('http').createServer(app);
@@ -47,7 +54,7 @@ io.on("connection", function(socket){
     });
 });
 
-http.listen(PORT, function(){
+http.listen(port, function(){
     console.log("Server is running");
 });
 
