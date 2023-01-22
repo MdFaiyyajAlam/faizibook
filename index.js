@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/BMS");
 
 const express= require("express");
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 
 var http = require('http').createServer(app);
@@ -47,7 +47,7 @@ io.on("connection", function(socket){
     });
 });
 
-http.listen(PORT, function(){
+http.listen(port, function(){
     console.log("Server is running");
 });
 
