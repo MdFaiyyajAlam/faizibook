@@ -10,6 +10,7 @@ useUnifiedTopology:true
 
 const port = process.env.PORT || 3000;
 const express= require("express");
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 var http = require('http').createServer(app);
