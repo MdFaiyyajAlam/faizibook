@@ -1,0 +1,53 @@
+<%- include("./layouts/header.ejs") %>
+
+
+<div class="container">
+    <h1>Blog Setup</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-sm-12">
+                <input type="text" name="blog_title" placeholder="Enter Blog Title" required>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12">
+                <input type="file" name="blog_image"  required>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12">
+                <textarea name="description" placeholder="Enter Blog Description" required></textarea>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12">
+                <input type="text" name="name" placeholder="Enter Name"  required>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12">
+                <input type="email" name="email" placeholder="Enter Email"  required>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12">
+                <input type="password" name="password" placeholder="Enter Password"  required>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12">
+                <input type="submit" value="Blog Setup" class="btn btn-success">
+            </div>
+        </div>
+    </form>
+</div>
+
+<%
+  if(typeof message !== 'undefined'){
+    %>
+      <p style="color: red;"><%= message %></p>
+    <%
+  }
+%>
+
+<%- include("./layouts/footer.ejs") %>

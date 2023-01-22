@@ -1,0 +1,67 @@
+
+<%- include("./layouts/header.ejs") %>
+
+<div class="container mt-5">
+    <div class="row">
+        <h1 class="text-center">Welcome To Login Page</h1>
+
+        <%
+           if(typeof message !== 'undefined'){
+             %>
+               <p style="color: red;"><%= message %></p>
+             <%
+           }
+         %>
+
+        <div class="col-lg-5 mx-auto">
+            <form action="" method="post">
+            <div class="card bg-light mt-5">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="">Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Enter Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Password</label>
+                        <input type="Password" name="password" class="form-control" placeholder="Enter Your Password" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit"  class="btn btn-info" value="Login">
+                        <a href="forget-password">Forget Password</a>
+                        <!-- <a href="#">Create Account</a> -->
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container">
+    <h1>Login</h1>
+<%
+  if(typeof message !== 'undefined'){
+    %>
+      <p style="color: red;"><%= message %></p>
+    <%
+  }
+%>
+    <form action="" method="post">
+        <div class="row">
+            <div class="col-sm-12">
+                <input type="email" name="email" placeholder="Enter Email" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <input type="password" name="password" placeholder="Enter Password" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <input type="submit"  class="btn btn-info" value="Login">
+            </div>
+        </div>
+    </form>
+</div> -->
+<%- include("./layouts/footer.ejs") %>
